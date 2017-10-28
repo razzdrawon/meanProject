@@ -19,4 +19,18 @@ export class AutosService {
             .map(res => res.json());
    }
 
+   postAuto(auto:Auto){
+    let params = JSON.stringify(auto)
+    let headers = new Headers()
+    headers.append(
+      'Content-type','application/json'
+    );
+    
+    return this._http.post(
+      this.url + '/auto',
+      params,
+      {headers:headers}
+    ).map(res=>res.json().data)
+  }
+
 }

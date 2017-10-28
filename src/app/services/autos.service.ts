@@ -15,7 +15,7 @@ export class AutosService {
    }
 
    getAutos() {
-     return this._http.get(this.url + '/autos')
+     return this._http.get(this.url + '/autos').retry(3)
             .map(res => res.json());
    }
 

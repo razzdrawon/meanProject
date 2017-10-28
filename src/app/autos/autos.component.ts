@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Auto } from '../models/auto'
 import { ConfirmComponent } from '../confirm/confirm.component';
 import { DialogService } from 'ng2-bootstrap-modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autos',
@@ -21,6 +22,7 @@ export class AutosComponent implements OnInit {
 
   //El constructor inicializa Atributos
   constructor(
+    private router: Router,
     private _autoService: AutosService,
     private dialogService: DialogService
   ) {
@@ -39,6 +41,7 @@ export class AutosComponent implements OnInit {
         }
         else{
           this.autos = result.data;
+          localStorage.setItem('autos', JSON.stringify(this.autos));
         }
       },
       error => {
@@ -66,6 +69,10 @@ export class AutosComponent implements OnInit {
     setTimeout(() => {
       disposable.unsubscribe();
     }, 10000);
+  }
+
+  view(auto: any) {
+    this.router.navigate(['/autos', auto._id, 'details']);
   }
 
 }

@@ -40,11 +40,11 @@
             <td class="text-right">{{auto.anio}}</td>
             <td>{{auto.version | uppercase}}</td>
             <td>
-            <!--<button [routerLink]="['/autos',auto._id,'details']"
+            <button (click)="view(auto)"
                     type="button" 
-                    class="btn btn-info">Ver</button>-->
-            <button type="button" 
                     class="btn btn-info">Ver</button>
+            <!-- <button type="button" 
+                    class="btn btn-info">Ver</button> -->
             <button type="button" 
                     class="btn btn-primary">Editar</button>
             <button type="button" 

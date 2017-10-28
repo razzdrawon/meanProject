@@ -6,16 +6,24 @@ import { AutosComponent } from './autos/autos.component';
 //peticiones HTTP
 import { HttpModule, JsonpModule } from '@angular/http';
 
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import { ConfirmComponent } from './confirm/confirm.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    AutosComponent
+    AutosComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    BootstrapModalModule
+  ],
+  entryComponents: [
+    ConfirmComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

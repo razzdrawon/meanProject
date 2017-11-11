@@ -33,4 +33,10 @@ export class AutosService {
     ).map(res=>res.json().data)
   }
 
+  deleteAuto(idAuto:any){
+    return this._http.delete(
+      this.url + '/auto'
+    ).map(res=>res.json().data)
+  }
+
 }

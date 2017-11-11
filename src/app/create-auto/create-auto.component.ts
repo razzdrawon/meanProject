@@ -96,6 +96,10 @@ export class CreateAutoComponent implements OnInit {
     this.formAuto.reset();
   }
 
+  back(){
+    this.router.navigate(['/']);;
+  }
+
   showConfirm(title:string,message:string,kind:string) {
     let disposable = 
     this.dialogService.
